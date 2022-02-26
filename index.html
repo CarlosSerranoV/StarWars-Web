@@ -15,9 +15,7 @@
         margin: 0px;
     }
 
-    .container {
-        height: 100%;
-    }
+
 
     .contenedor {
         position: relative;
@@ -30,6 +28,32 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .cardDark {
+        border-color: #1d1d1d;
+
+    }
+
+    .cardBodyDark {
+        padding: 0px !important;
+        background-color: #1d1d1d;
+        color: white;
+    }
+    .cardWhite {
+        border-color: #ffffff;
+
+    }
+
+    .cardBodyWhite {
+        padding: 0px !important;
+    }
+
+    @media (min-width: 770px) {
+        .card {
+            min-height: 50%;
+        }
+
     }
 </style>
 
@@ -49,50 +73,78 @@
             <div class="col-md-3 mb-2">
                 <div class="card" style="background-color: #1d1d1d;">
                     <div id="imagen">
-                        <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
+                        <img class="card-img-top"  src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
                             alt="Card image">
                     </div>
 
                     <div class="card-body" id="nombre">
-                        <h4 class="card-title " style="color: white;" >John Doe</h4>
+                        <h4 class="card-title " style="color: white;">John Doe</h4>
                     </div>
                 </div>
             </div>
+            <!--<div class="col-md-2">
+                <div class="card" style="height: 100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">Especie</h4>
+                        <div class="row" >
+                           <div class="col-md-4 col-sm-2">
+                            <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
+                            alt="Card image" >
+                           
+                           </div>
+                           <div class="col-md-4" >
+                            <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
+                            alt="Card image" >
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
             <div class="col-md-4 mb-2">
-                <div class="card" style="height: 50%; background-color: #1d1d1d;">
+                <div class="card" style="width: 100%;  background-color: #1d1d1d;">
                     <div class="card-body">
                         <h4 class="card-title" style="color: white;">Vehiculo</h4>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="card" style="background-color: #1d1d1d;">
-                                    <img src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
-                                        class="rounded">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="color: white;font-size: 20px;">John Doe</h4>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="vehiculos">
+
+
                         </div>
 
                     </div>
                 </div>
-                <div class="card" style="height: 50%;">
+                <div></div>
+                <div class="card " style="width: 100%;">
                     <div class="card-body">
-                        <h4 class="card-title">Especie</h4>
+                        <h4 class="card-title" style="color: rgb(0, 0, 0);">Especie</h4>
+                        <div class="row" id="especies">
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-2">
-                <div class="card" style="height: 50%; background-color: #1d1d1d;">
+                <div class="card" style="width: 100%; background-color: #1d1d1d;">
                     <div class="card-body">
                         <h4 class="card-title" style="color: white;">Naves</h4>
+                        <div class="row" id="naves">
+
+
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="height: 50%;">
+
+                <div class="card" style="width: 100%;">
                     <div class="card-body">
                         <h4 class="card-title">Peliculas</h4>
+                        <div class="row" id="peliculas">
+
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
