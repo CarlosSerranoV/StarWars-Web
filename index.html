@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>StarWars-Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0px;
+    }
+
+    .container {
+        height: 100%;
+    }
+</style>
+
+<body style="background-image: url('img/starwars.gif'); background-size: 20%;">
+    <h1 id="contador" style="color: white;">30</h1>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-info" id="getPersonaje">Obtener personaje</button>
+            </div>
+        </div>
+        <div class="row" id="personaje">
+            
+        </div>
+    </div>
+    <script src="js/starwars.js"></script>
+    <script src="model/personaje.js"></script>
+    <script src="js/contador.js"></script>
+</body>
+
+</html>
