@@ -16,8 +16,33 @@ function getInfo() {
 
       let element = document.getElementById("personaje");
 
+
+ ////////////////////////////////////////////////////////////
+      let imgPersonaje = document.getElementById("imagen");
+
+      let img = document.createElement("img");
+      img.src = "https://starwars-visualguide.com/assets/img/characters/"+random+".jpg";
+      img.className = "card-img-top";
+
+      imgPersonaje.replaceChildren(img);  
+
+
+
+//////////////////////////////////////////////////////////////
+      let nombre = document.getElementById("nombre");
+
+      let nom = document.createElement("h4");
+      nom.style.color = "white";
+      nom.appendChild(document.createTextNode(per.name));
+      nombre.replaceChildren(nom);  
+
+
+
+//////////////////////////////////////////////////////////////
+
+/*
       element.innerHTML =
-        ` <div class="col-md-2"> 
+        ` <div class="col-md-8"> 
         <div class="card">
     <img src="https://starwars-visualguide.com/assets/img/characters/` +
         random +
@@ -37,7 +62,7 @@ function getInfo() {
     </div>            
     </div>
     `;
-
+*/
       per.vehicles.length > 0
         ? getData(per.vehicles, "vehiculos")
         : per.films.length > 0
