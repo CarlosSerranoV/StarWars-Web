@@ -25,6 +25,8 @@ function getInfo() {
       let img = document.createElement("img");
       img.src = people + random + ".jpg";
       img.className = "card-img-top";
+      img.setAttribute("onerror", "this.src='img/noFound.jpg'");
+
 
       imgPersonaje.replaceChildren(img);
 
