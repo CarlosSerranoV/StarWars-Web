@@ -1,4 +1,4 @@
-var contador = 30;
+var contador = 1000;
 
 var timer = setInterval(function () {
   contador--;

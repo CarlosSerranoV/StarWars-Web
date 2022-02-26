@@ -7,109 +7,61 @@
     <title>StarWars-Web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link href="css/diseño.css" rel="stylesheet">
+
 </head>
-<style>
-    html,
-    body {
-        height: 100%;
-        margin: 0px;
-    }
-
-
-
-    .contenedor {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-    }
-
-    .centrado {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .cardDark {
-        border-color: #1d1d1d;
-
-    }
-
-    .cardBodyDark {
-        padding: 0px !important;
-        background-color: #1d1d1d;
-        color: white;
-    }
-    .cardWhite {
-        border-color: #ffffff;
-
-    }
-
-    .cardBodyWhite {
-        padding: 0px !important;
-    }
-
-    @media (min-width: 770px) {
-        .card {
-            min-height: 50%;
-        }
-
-    }
-</style>
 
 <body style="background-image: url('img/starwars.gif'); background-size: 25%;">
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000d0;">
-        <a class="navbar-brand d-lg-none" href="#"><img src="img/logo.png" height="100px"></a>
-        <div class="collapse navbar-collapse" id="myNavbarToggler7">
+        <a class="navbar-brand mx-auto d-lg-none" href="#"><img src="img/logo.png" height="100px"></a>
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
-                <a class="d-none d-lg-block" href="#"><img src="img/logo.png" height="150px"></a>
+                <a class="d-none d-lg-block" href="#"><img src="img/logo.png" height="120px"></a>
             </ul>
         </div>
     </nav>
 
+
+
     <div class="container-fluid">
-        <div class="row mt-5">
+        <div class="row justify-content-between ">
+            <div class="col-md-3 align-self-center text-center">
+                <button type="button" class="btn" style="background-color: #FFE81F; color: black;font-weight: bold;"
+                    id="getPersonaje">Obtener personaje</button>
+            </div>
+            <div class="col-md-6 ">
+                <h1 style="font-size: 50px;color: white;" class="text-center mt-3">¿Cuál será el próximo personaje?</h1>
+
+            </div>
+            <div class="col-md-3 justify-content-center align-self-center">
+                <div class="contenedor ">
+                    <img src="img/contador.png" height="150px">
+                    <h1 id="contador" class="centrado" style="color: white;" class="text-right mr-5">30</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-1 justify-content-center">
             <div class="col-md-3 mb-2">
                 <div class="card" style="background-color: #1d1d1d;">
                     <div id="imagen">
-                        <img class="card-img-top"  src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
+                        <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
                             alt="Card image">
                     </div>
-
                     <div class="card-body" id="nombre">
                         <h4 class="card-title " style="color: white;">John Doe</h4>
                     </div>
                 </div>
             </div>
-            <!--<div class="col-md-2">
-                <div class="card" style="height: 100%;">
-                    <div class="card-body">
-                        <h4 class="card-title">Especie</h4>
-                        <div class="row" >
-                           <div class="col-md-4 col-sm-2">
-                            <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
-                            alt="Card image" >
-                           
-                           </div>
-                           <div class="col-md-4" >
-                            <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/35.jpg"
-                            alt="Card image" >
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
 
             <div class="col-md-4 mb-2">
                 <div class="card" style="width: 100%;  background-color: #1d1d1d;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: white;">Vehiculo</h4>
+                        <h4 class="card-title" style="color: white;">Vehiculos</h4>
                         <div class="row" id="vehiculos">
-
-
                         </div>
-
                     </div>
                 </div>
                 <div></div>
@@ -117,8 +69,6 @@
                     <div class="card-body">
                         <h4 class="card-title" style="color: rgb(0, 0, 0);">Especie</h4>
                         <div class="row" id="especies">
-
-
                         </div>
 
                     </div>
@@ -129,8 +79,6 @@
                     <div class="card-body">
                         <h4 class="card-title" style="color: white;">Naves</h4>
                         <div class="row" id="naves">
-
-
                         </div>
                     </div>
                 </div>
@@ -145,35 +93,9 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-
-    </div>
-
-    <div class="container-fluid">
-        <h1 style="font-size: 50px;color: white;" class="text-center mt-3">¿Qué personaje saldra?</h1>
-        <div class="row justify-content-end">
-            <div class="col-md-4" id="personaje">
 
             </div>
-            <div class="col-md-4">
-
-            </div>
-
-
-            <div class="col-md-2">
-                <div class="contenedor">
-                    <img src="img/contador.png" class="img-fluid">
-                    <h1 id="contador" class="centrado" style="color: white;" class="text-right mr-5">30</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-2">
-                <button type="button" class="btn btn-info" id="getPersonaje">Obtener personaje</button>
-            </div>
+        
         </div>
 
     </div>

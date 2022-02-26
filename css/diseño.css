@@ -1,0 +1,45 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+
+
+.contenedor {
+    position: relative;
+    text-align: center;
+}
+
+.centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cardDark {
+    border-color: #1d1d1d;
+
+}
+
+.cardBodyDark {
+    padding: 0px !important;
+    background-color: #1d1d1d;
+    color: white;
+}
+.cardWhite {
+    border-color: #ffffff;
+
+}
+
+.cardBodyWhite {
+    padding: 0px !important;
+}
+
+@media (min-width: 770px) {
+    .card {
+        min-height: 50%;
+    }
+
+}
