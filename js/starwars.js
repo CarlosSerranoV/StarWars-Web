@@ -65,7 +65,7 @@ function noData(id){
   let elemento = document.getElementById(id);
 
   let divElem = document.createElement("div");
-  divElem.className = "col-md-10 col-12 offset-md-1";
+  divElem.className = "col-md-6 col-12 offset-md-3";
 
   let cardElem = document.createElement("div");
   cardElem.className = "card cardsPageSearch";
