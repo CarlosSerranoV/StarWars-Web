@@ -10,7 +10,10 @@ const peliculasURL = "https://starwars-visualguide.com/assets/img/films/";
 getNuevo.addEventListener("click", getInfo);
 
 function getInfo() {
-  const random = Math.floor(Math.random() * 83 + 1);
+  let random = Math.floor(Math.random() * 83 + 1);
+  if(random==17){
+    random+=1;
+  }
   const Api_URL = "https://swapi.dev/api/people/" + random;
 
   fetch(Api_URL)
