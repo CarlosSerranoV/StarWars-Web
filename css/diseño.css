@@ -4,8 +4,6 @@ body {
     margin: 0px;
 }
 
-
-
 .contenedor {
     position: relative;
     text-align: center;
@@ -36,6 +34,18 @@ body {
 .cardBodyWhite {
     padding: 0px !important;
 }
+
+.cardsPage {
+  
+    animation: zoomIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+  }
+
+  .cardsPageSearch {
+  
+    animation: headShake; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s; /* don't forget to set a duration! */
+  }
 
 @media (min-width: 770px) {
     .card {

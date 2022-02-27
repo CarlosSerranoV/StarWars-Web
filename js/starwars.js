@@ -1,17 +1,17 @@
 
 let getNuevo = document.getElementById("getPersonaje");
 
-let people = "https://starwars-visualguide.com/assets/img/characters/";
-let vehiculosURL = "https://starwars-visualguide.com/assets/img/vehicles/";
-let navesURL = "https://starwars-visualguide.com/assets/img/starships/";
-let especiesURL = "https://starwars-visualguide.com/assets/img/species/";
-let peliculasURL = "https://starwars-visualguide.com/assets/img/films/";
+const people = "https://starwars-visualguide.com/assets/img/characters/";
+const vehiculosURL = "https://starwars-visualguide.com/assets/img/vehicles/";
+const navesURL = "https://starwars-visualguide.com/assets/img/starships/";
+const especiesURL = "https://starwars-visualguide.com/assets/img/species/";
+const peliculasURL = "https://starwars-visualguide.com/assets/img/films/";
 
 getNuevo.addEventListener("click", getInfo);
 
 function getInfo() {
-  let random = Math.floor(Math.random() * 83 + 1);
-  let Api_URL = "https://swapi.dev/api/people/" + random;
+  const random = Math.floor(Math.random() * 83 + 1);
+  const Api_URL = "https://swapi.dev/api/people/" + random;
 
   fetch(Api_URL)
     .then(checkStatus)
@@ -24,7 +24,7 @@ function getInfo() {
 
       let img = document.createElement("img");
       img.src = people + random + ".jpg";
-      img.className = "card-img-top";
+      img.className = "card-img-top cardsPageSearch";
       img.setAttribute("onerror", "this.src='img/noFound.jpg'");
 
 
@@ -40,22 +40,53 @@ function getInfo() {
 
       clearCards();
 
+      let imgNoData = document.createElement("img");
+      imgNoData.src = "img/noData.png";
+
       per.vehicles.length > 0
         ? getData(per.vehicles, "vehiculos", vehiculosURL)
-        : null;
+        : noData("vehiculos");
       per.films.length > 0 
       ? getData(per.films, "peliculas", peliculasURL) 
-      : null;
+      : noData("peliculas");
       per.starships.length > 0
         ? getData(per.starships, "naves", navesURL)
-        : null;
+        : noData("naves");
       per.species.length > 0
         ? getData(per.species, "especies", especiesURL)
-        : null;
+        : noData("especies");
     })
     .catch((err) => {
       console.log("Se produjo un error", err);
     });
+}
+
+function noData(id){
+  let elemento = document.getElementById(id);
+
+  let divElem = document.createElement("div");
+  divElem.className = "col-md-10 col-12 offset-md-1";
+
+  let cardElem = document.createElement("div");
+  cardElem.className = "card cardsPageSearch";
+
+  let imgElem = document.createElement("img");
+  imgElem.src ="img/noData.png";
+  imgElem.className = "card-img-top";
+  imgElem.setAttribute("onerror", "this.src='img/noFound.jpg'");
+
+  let cardBodyElem = document.createElement("div");
+  cardBodyElem.className = "card-body cardBodyWhite";
+
+  let cardTitleElem = document.createElement("div");
+  cardTitleElem.className = "card-title";
+
+  cardBodyElem.appendChild(cardTitleElem);
+  cardElem.appendChild(imgElem);
+  cardElem.appendChild(cardBodyElem);
+  divElem.appendChild(cardElem);
+
+  elemento.appendChild(divElem);
 }
 
 function clearCards() {
@@ -89,8 +120,8 @@ function getData(data, id, url) {
 
         let cardElem = document.createElement("div");
         id == "vehiculos" || id == "naves"
-          ? (cardElem.className = "card cardDark")
-          : (cardElem.className = "card cardWhite");
+          ? (cardElem.className = "card cardDark cardsPageSearch")
+          : (cardElem.className = "card cardWhite cardsPageSearch");
 
         let imgElem = document.createElement("img");
         imgElem.src =
